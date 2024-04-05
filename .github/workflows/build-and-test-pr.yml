@@ -264,8 +264,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: 'apache/dubbo-samples'
-          ref: master
+          repository: 'wxbty/dubbo-samples'
+          ref: bh-test
       - name: "Remove benchmark"
         run: |
           CONFIG_PATH=./10-task/dubbo-samples-benchmark/case-configuration.conf
@@ -295,8 +295,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: 'apache/dubbo-samples'
-          ref: master
+          repository: 'wxbty/dubbo-samples'
+          ref: bh-test
       - name: "Cache local Maven repository"
         uses: actions/cache@v3
         with:
@@ -356,8 +356,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: 'apache/dubbo-samples'
-          ref: master
+          repository: 'wxbty/dubbo-samples'
+          ref: bh-test
       - name: "Download test result"
         uses: actions/download-artifact@v3
         with:
