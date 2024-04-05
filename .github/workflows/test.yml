@@ -53,14 +53,14 @@ jobs:
           key: ${{ runner.os }}-dubbo-snapshot-${{ github.sha }}-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-dubbo-snapshot-${{ github.sha }}
-      - name: "Build Dubbo with Maven"
-        if: steps.dubbo-cache.outputs.cache-hit != 'true'
+      - name: "Build Dubbo with Maven123"
+        if: steps.dubbocache.outputs.cache-hit != 'true'
         run: |
           #!/bin/bash
           cd test
           echo "hit"
-      - name: "Build Dubbo with Maven"
-        if: steps.dubbo-cache.outputs.cache-hit != 'false'
+      - name: "Build Dubbo with Maven333"
+        if: steps.dubbocache.outputs.cache-hit != 'false'
         run: |
           #!/bin/bash
           cd test
