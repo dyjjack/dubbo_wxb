@@ -60,7 +60,7 @@ public class InvocationUtil {
                             + "MethodName:" + rpcInvocation.getMethodName());
                 }
 
-                Thread.sleep(30);
+                Thread.sleep(100);
                 rpcInvocation.put(Profiler.PROFILER_KEY, bizProfiler);
                 try {
                     return invoker.invoke(rpcInvocation).recreate();
