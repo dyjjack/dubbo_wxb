@@ -61,11 +61,9 @@ jobs:
         if: steps.dubbocache.outputs.cache-hit != 'true'
         run: |
           #!/bin/bash
-          cd test
           echo "hit"
       - name: "Build Dubbo with Maven333"
         if: steps.dubbocache.outputs.cache-hit != 'false'
         run: |
           #!/bin/bash
-          cd test
           echo "not hit"
