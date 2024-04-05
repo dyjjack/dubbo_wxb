@@ -25,8 +25,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: 'apache/dubbo-samples'
-          ref: master
+          repository: 'wxbty/dubbo-samples'
+          ref: bh-test
       - name: Check if directory exists
         run: |
           #!/bin/bash
@@ -95,8 +95,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: 'apache/dubbo-samples'
-          ref: master
+          repository: 'wxbty/dubbo-samples'
+          ref: bh-test
       - name: "Cache local Maven repository"
         uses: actions/cache@v3
         with:
@@ -252,8 +252,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: 'apache/dubbo-samples'
-          ref: master
+          repository: 'wxbty/dubbo-samples'
+          ref: bh-test
       - name: "Cache local Maven repository"
         uses: actions/cache@v3
         with:
@@ -410,8 +410,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: 'apache/dubbo-samples'
-          ref: master
+          repository: 'wxbty/dubbo-samples'
+          ref: bh-test
       - name: "Cache local Maven repository"
         uses: actions/cache@v3
         with:
