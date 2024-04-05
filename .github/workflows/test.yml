@@ -45,14 +45,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           path: dubbo
-      - name: "Cache local Maven repository"
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}-${{ github.run_id }}
-          restore-keys: |
-            ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-            ${{ runner.os }}-maven-
       - name: "Dubbo cache"
         id: dubbocache
         uses: actions/cache@v3
@@ -61,15 +53,9 @@ jobs:
           key: ${{ runner.os }}-dubbo-snapshot-${{ github.sha }}-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-dubbo-snapshot-${{ github.sha }}
-      - name: "Set up JDK 17"
-        if: steps.dubbocache.outputs.cache-hit != 'true'
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'zulu'
-          java-version: 17
       - name: Check if directory exists
         run: |
           #!/bin/bash
           cd test
-          echo ${{ steps.dubbocache.outputs.cache-hit }}
+          echo "${{ steps.dubbocache.outputs.cache-hit }}"
 
