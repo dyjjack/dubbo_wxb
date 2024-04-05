@@ -53,6 +53,10 @@ jobs:
           key: ${{ runner.os }}-dubbo-snapshot-${{ github.sha }}-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-dubbo-snapshot-${{ github.sha }}
+
+      - name: Print cache hit status
+        run: |
+          echo "Cache hit: ${{ steps.dubbocache.outputs.cache-hit-var }}"
       - name: "Build Dubbo with Maven123"
         if: steps.dubbocache.outputs.cache-hit != 'true'
         run: |
