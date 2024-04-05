@@ -20,7 +20,6 @@ env:
 jobs:
   build-source:
     name: "Build Dubbo"
-    needs: check-benchmark-path
     runs-on: ubuntu-latest
     steps:
       - name: "Build Dubbo with Maven333"
