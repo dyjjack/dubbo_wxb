@@ -59,6 +59,8 @@ public class InvocationUtil {
                     bizProfiler = Profiler.start("Receive request. Client invoke begin. ServiceKey: " + serviceKey + " "
                             + "MethodName:" + rpcInvocation.getMethodName());
                 }
+
+                Thread.sleep(30000);
                 rpcInvocation.put(Profiler.PROFILER_KEY, bizProfiler);
                 try {
                     return invoker.invoke(rpcInvocation).recreate();
