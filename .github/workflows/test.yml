@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Print CPU Information
         run: |
-          sudo du -ha / | sort -rh | head -n 10
+          sudo du -ha /home/runner/work/ | sort -rh | head -n 10
   build-source:
     name: "Build Dubbo"
     runs-on: ubuntu-latest
