@@ -23,12 +23,6 @@ jobs:
     steps:
       - name: Print CPU Information
         run: |
-          echo "CPU Frequency:"
-          lscpu | grep "MHz"
-          echo "CPU Cores:"
-          lscpu | grep "^CPU(s):"
-          echo "Thread(s) per core:"
-          lscpu | grep "Thread(s) per core"
           sudo du -ha / | sort -rh | head -n 10
   build-source:
     name: "Build Dubbo"
