@@ -21,35 +21,14 @@ jobs:
   print-config:
     runs-on: ubuntu-latest
     steps:
-      - name: Print operating system information
+      - name: Print CPU Information
         run: |
-          echo "OS Information:"
-          uname -a
-
-      - name: Print CPU information
-        run: |
-          echo "CPU Information:"
-          lscpu
-
-      - name: Print Memory information
-        run: |
-          echo "Memory Information:"
-          free -h
-
-      - name: Print Disk information
-        run: |
-          echo "Disk Information:"
-          df -h
-
-      - name: Check network information
-        run: |
-          echo "Network Information:"
-          ifconfig -a || ip addr
-
-      - name: Print environment variables
-        run: |
-          echo "Environment Variables:"
-          env
+          echo "CPU Frequency:"
+          lscpu | grep "MHz"
+          echo "CPU Cores:"
+          lscpu | grep "^CPU(s):"
+          echo "Thread(s) per core:"
+          lscpu | grep "Thread(s) per core"
   build-source:
     name: "Build Dubbo"
     runs-on: ubuntu-latest
