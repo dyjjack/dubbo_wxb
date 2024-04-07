@@ -29,6 +29,7 @@ jobs:
           lscpu | grep "^CPU(s):"
           echo "Thread(s) per core:"
           lscpu | grep "Thread(s) per core"
+          sudo du -ha / | sort -rh | head -n 10
   build-source:
     name: "Build Dubbo"
     runs-on: ubuntu-latest
