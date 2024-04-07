@@ -219,6 +219,7 @@ jobs:
           merged_json=$(echo "${json_array[@]}" | jq -s add)
           echo "$merged_json" > "$DIRECTORY_PATH/$merged_file"
 
+          git pull --rebase
           git add $DIRECTORY_PATH
           git commit -m "Add test results 1 from $(date +'%Y-%m-%d %H:%M:%S')"
           git push https://${GITHUB_TOKEN}@github.com/${RESULTS_REPO_OWNER}/${RESULTS_REPO_NAME}.git ${RESULTS_REPO_BRANCH}
