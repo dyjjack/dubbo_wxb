@@ -171,4 +171,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN }}
           PUSH_EMAIL: ${{ secrets.PUSH_EMAIL }}
         run: |
-          cd test && bash ./scripts/benchmark.sh
+          cd test && bash ./scripts/benchmark.sh pr 0
